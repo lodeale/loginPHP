@@ -1,0 +1,11 @@
+{
+    "require-dev":{
+        "Slim/Slim": "2.*",
+        "phpunit/phpunit":"3.7.14"
+    },
+    "autoload":{
+        "psr-4":{
+            "myapp\\":"src"
+        }
+    }
+}
