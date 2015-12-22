@@ -1,5 +1,5 @@
 function redirect(){
-	location.href='panel.php';
+	location.href='../index.php/panel/';
 }
 
 $(function(){

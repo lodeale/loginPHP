@@ -1,10 +1,10 @@
 <?php 
-	if (empty($_COOKIE['loginTrue']) or !$_COOKIE['loginTrue']){
+	if (empty($loginTrue) or !$loginTrue){
 		die ('Usted no es un usuario validado');
 	}
 
-	if ( empty($_COOKIE["username"]) ){
-		$_COOKIE["username"] = 'Desconocido';
+	if ( empty($username) ){
+		$username = 'Desconocido';
 	}
 ?>
 <!DOCTYPE html>
@@ -13,8 +13,8 @@
 	<meta charset="UTF-8">
 	<title>Login</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../assets/css/signin.css">
+	<link rel="stylesheet" href="<?= $rootPath ?>assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?= $rootPath ?>assets/css/signin.css">
 </head>
 <body>
 	<!-- message -->
@@ -37,13 +37,13 @@
 						<a href="#"> Inicio </a>
 					</li>
 					<li>
-						<a href="#about">Salir</a>
+						<a href="<?= $rootPath ?>index.php/inLogin/">Salir</a>
 					</li>					
 				</ul>
 				<ul class="nav navbar-right">
 					<li><p class="navbar-text">
 					Bienvenido
-					<?= $_COOKIE['username']; ?></p>
+					<?= $username; ?></p>
 					</li>
 				</ul>
 			</div><!-- nav-collapse -->
@@ -120,8 +120,6 @@
 	</div>
 	<!-- script bootstrap -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="../assets/js/bootstrap.min.js"></script>
-	<!-- alerts -->
-	<script src="../assets/js/login.js"></script>
+	<script src="<?= $rootPath ?>assets/js/bootstrap.min.js"></script>
 </body>
 </html>

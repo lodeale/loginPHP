@@ -1,6 +1,8 @@
 <?php
 
 $app->post('/login/',function() use ($app,$db) {
+	$app->response->headers->set('Content-Type','application/json');
+
 	$username = $app->request()->post('username');
 	$password = $app->request()->post('password');
 
@@ -19,12 +21,14 @@ $app->post('/login/',function() use ($app,$db) {
 });
 
 $app->get('/showData/', function() use ($app,$db) {
+	$app->response->headers->set('Content-Type','application/json');
 	var_dump($_COOKIE);
 });
 
-$app->get('/inLogin/',function() use ($app){
+$app->get('/inLogin/',function() use ($app,$rootPath){
 	$app->deleteCookie('loginTrue');
 	$app->deleteCookie('username');
+	$app->response->redirect($rootPath . 'web/index.php');
 });
 
 ?>
